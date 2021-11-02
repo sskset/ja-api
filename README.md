@@ -1,8 +1,8 @@
 # JA API
 
 ## Prerequisites
-> Have Docker installed  https://www.docker.com/
-> Have Visual Studio 2019 installed https://visualstudio.microsoft.com/downloads/
+> Have Docker installed  https://www.docker.com/   
+> Have Visual Studio 2019 installed https://visualstudio.microsoft.com/downloads/   
 
 ## Startup
 Select Docker Compose
