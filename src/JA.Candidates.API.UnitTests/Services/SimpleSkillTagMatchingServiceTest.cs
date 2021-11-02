@@ -1,8 +1,5 @@
 ﻿using JA.Candidates.API.Services;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace JA.Candidates.API.UnitTests.Services

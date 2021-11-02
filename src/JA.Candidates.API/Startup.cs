@@ -32,6 +32,12 @@ namespace JA.Candidates.API
             services.AddRefitClient<IJobAdderRestService>()
                 .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://private-76432-jobadder1.apiary-mock.com"));
 
+            //services.AddHttpClient("jobadder", c =>
+            //{
+            //    c.BaseAddress = new Uri("http://private-76432-jobadder1.apiary-mock.com");
+            //});
+
+            //services.AddTransient<IJobAdderRestService, HttpClientJobAdderRestService>();
             services.AddSingleton<ISkillTagMatchService, SimpleSkillTagMatchingService>();
 
             services.AddControllers();

@@ -1,10 +1,12 @@
 ﻿using JA.Candidates.API.Application.Queries;
+using JA.Candidates.API.Entities;
 using JA.Candidates.API.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace JA.Candidates.API.Controllers
@@ -23,6 +25,7 @@ namespace JA.Candidates.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEquatable<Candidate>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCandidates()
         {
             try
@@ -42,6 +45,7 @@ namespace JA.Candidates.API.Controllers
         }
 
         [HttpGet("{candidateId}")]
+        [ProducesResponseType(typeof(Candidate), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetCandidateById([FromRoute]GetCandidateByIdQuery query)
         {
             try
@@ -61,8 +65,9 @@ namespace JA.Candidates.API.Controllers
 
         }
 
-        [HttpGet("find/by-skilltags")]
-        public async Task<IActionResult> GetMatchingCandidatesBySkillTags([FromQuery]GetCandidatesBySkillTagsQuery query)
+        [HttpPost("find/by-skilltags")]
+        [ProducesResponseType(typeof(IEnumerable<MatchingCandidate>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetMatchingCandidatesBySkillTags(GetCandidatesBySkillTagsQuery query)
         {
             try
             {
