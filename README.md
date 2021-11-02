@@ -5,7 +5,7 @@
 > Have Visual Studio 2019 installed https://visualstudio.microsoft.com/downloads/   
 
 ## Startup
-Select Docker Compose
+Set Docker Compose as the startup project
 
 ![image](https://user-images.githubusercontent.com/3833924/139779306-695e803b-0997-443f-94e7-48aea3c3a216.png)
 
