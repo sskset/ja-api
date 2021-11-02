@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  ja.candidates.api:
+    image: ${DOCKER_REGISTRY-}jacandidatesapi
+    build:
+      context: .
+      dockerfile: src/JA.Candidates.API/Dockerfile
+    ports:
+      - 5010:80
+
+  ja.jobs.api:
+    image: ${DOCKER_REGISTRY-}jajobsapi
+    build:
+      context: .
+      dockerfile: src/JA.Jobs.API/Dockerfile
+    ports:
+      - 5020:80
+
